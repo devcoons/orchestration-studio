@@ -11,10 +11,12 @@ namespace Orchestration_Studio.Classes
         public string pid;
         public string name;
         public string goal;
-        public string current;
-        public string realcurrent;
-        public string error;
-        public string realerror;
-        public string pgoal;
+        public string min;
+        public string max;
+        public string averagems;
+        public string currentms;
+        public string erroraverage;
+        public string errorcurrent;
+        public string offset;
     }
 }

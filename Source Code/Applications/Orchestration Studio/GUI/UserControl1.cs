@@ -14,12 +14,15 @@ namespace Orchestration_Studio.GUI
 
     public partial class UserControl1 : UserControl
     {
-        public UserControl1(string app,string name,int throughput)
+        public UserControl1(string app,string name,int gaverage,int minaverage, int maxaverage,int profiling)
         {
             InitializeComponent();
             textBox1.Text = app;
             textBox2.Text = name;
-            textBox3.Text = throughput.ToString();
+            textBox3.Text = gaverage.ToString();
+            textBox4.Text = minaverage.ToString();
+            textBox5.Text = maxaverage.ToString();
+            textBox6.Text = profiling.ToString();
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -33,19 +36,42 @@ namespace Orchestration_Studio.GUI
             {
                 textBox2.ReadOnly = true;
                 button3.Enabled = false;
+                textBox6.ReadOnly = true;
+                textBox8.ReadOnly = true;
+                textBox9.ReadOnly = true;
                 button2.Text = "Abort";
-                Program.main.AppExecute(textBox1.Text, textBox2.Text, textBox3.Text);
+                Program.main.AppExecute(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text,  textBox7.Text, comboBox1.SelectedItem.ToString(), textBox8.Text, textBox9.Text);
+            }
+            else
+            {
+                Program.main.StopApplication(textBox2.Text);
+                this.Dispose();           
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.main.ChangeThroughput(textBox2.Text, textBox3.Text);
-        }
+         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Program.main.ChangeIndPolicy(textBox2.Text, comboBox1.SelectedItem.ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Program.main.ChangeThroughput(textBox2.Text, textBox3.Text, textBox3.Text, textBox3.Text);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Program.main.ChangePriority(textBox2.Text,textBox7.Text);
+
         }
     }
 }

@@ -1,0 +1,34 @@
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Executable\Orchestration Studio.exe.config
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Executable\Orchestration Studio.exe
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.csprojResolveAssemblyReference.cache
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.About.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.ConnectionsManager.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.EncryptionPassword.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Error.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Feedback.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Help.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.LibrariesManager.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Main.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Settings.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.UserControl1.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.Properties.Resources.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.XResources.resources
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.csproj.GenerateResource.Cache
+C:\Users\Io.D\Desktop\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.exe
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Executable\Orchestration Studio.exe.config
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.exe
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Executable\Orchestration Studio.exe
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.csprojResolveAssemblyReference.cache
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.About.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.ConnectionsManager.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.EncryptionPassword.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Error.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Feedback.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Help.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.LibrariesManager.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Main.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.Settings.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.GUI.UserControl1.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.Properties.Resources.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration_Studio.XResources.resources
+C:\Users\Io. D\Desktop\Orchestrator v2\Orchestrator-GUI\Source Code\Orchestration Studio\obj\Release\Orchestration Studio.csproj.GenerateResource.Cache

@@ -9,6 +9,7 @@ namespace Orchestration_Studio.Classes
     public class CPUData
     {
         public string name;
-        public string value;
+        public string rtvalue;
+        public string avvalue;
     }
 }

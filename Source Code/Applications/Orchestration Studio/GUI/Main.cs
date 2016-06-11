@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -16,15 +17,42 @@ namespace Orchestration_Studio.GUI
     delegate void SetChartApp(List<Classes.AppData> appstats);
     delegate void SetChartSys(List<Classes.SysData> sysstats);
     delegate void SetChartCPU(List<Classes.CPUData> cpustats);
-    
+    delegate void ToolTipText(object sender, ToolTipEventArgs e);
+
     public partial class Main : Form
     {
         public static int selectedView = 0;
+        public static int selectedView1 = 0;
         List<GUI.UserControl1> registeredApplications;
         List<GUI.UserControl2> registeredStatistics;
+
+
+        public void InitializeChart(ref Chart chart)
+        {
+            chart.ChartAreas["ChartArea1"].AxisX.Interval = 2;
+            chart.ChartAreas["ChartArea1"].CursorX.AutoScroll = true;
+            chart.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
+            chart.ChartAreas["ChartArea1"].AxisX.ScaleView.SizeType = DateTimeIntervalType.Number;
+            chart.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoom(0, 100);
+            chart.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+            chart.ChartAreas["ChartArea1"].AxisX.ScaleView.SmallScrollSize = 100;
+            chart.ChartAreas["ChartArea1"].AxisX.InterlacedColor = Color.Silver;
+            chart.ChartAreas["ChartArea1"].AxisX.LineColor = Color.FromArgb(60, 60, 60);
+            chart.ChartAreas["ChartArea1"].AxisX.LineDashStyle = ChartDashStyle.Dot;
+            chart.ChartAreas["ChartArea1"].CursorY.AutoScroll = true;
+            chart.ChartAreas["ChartArea1"].AxisX.TitleForeColor = Color.Silver;
+            chart.ChartAreas["ChartArea1"].AxisY.TitleForeColor = Color.Silver;
+            chart.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = false;
+            chart.ChartAreas["ChartArea1"].AxisY.ScrollBar.Enabled = false;
+        }
+
+
+
         public Main()
         {
-           registeredApplications = new List<UserControl1>();
+            InitializeComponent();
+            
+            registeredApplications = new List<UserControl1>();
             registeredStatistics = new List<UserControl2>();
             registeredStatistics.Add(new UserControl2("CPU A59 Average Usage:", "0%"));
             registeredStatistics.Add(new UserControl2("CPU A52 Average Usage:", "0%"));
@@ -34,68 +62,30 @@ namespace Orchestration_Studio.GUI
             registeredStatistics.Add(new UserControl2("CPU A52 Average uA:", "0uA"));
             registeredStatistics.Add(new UserControl2("SYS Board Average Power:", "0uW"));
             registeredStatistics.Add(new UserControl2("SYS Board Average uA:", "0uA"));
-            InitializeComponent();
-            splitContainer3.SplitterDistance = splitContainer3.Width - 255;
+            
+            splitContainer3.SplitterDistance = splitContainer3.Width - 287;
             panel1.Hide();
-            chart1.ChartAreas["ChartArea1"].AxisX.Interval = 2;
-            chart1.ChartAreas["ChartArea1"].CursorX.AutoScroll = true;
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.SizeType = DateTimeIntervalType.Number;
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoom(0, 100);
-            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
-            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.SmallScrollSize = 100;
-            chart1.ChartAreas["ChartArea1"].AxisX.InterlacedColor = Color.Silver;
-            chart1.ChartAreas["ChartArea1"].AxisX.LineColor = Color.FromArgb(60, 60, 60);
-            chart1.ChartAreas["ChartArea1"].AxisX.LineDashStyle = ChartDashStyle.Dot;
-            chart1.ChartAreas["ChartArea1"].CursorY.AutoScroll = true;
 
-            chart1.ChartAreas["ChartArea1"].AxisY.Title = "Average time in milliseconds";
-            if(Program.watcher!=null)
+            InitializeChart(ref chart1);
+            InitializeChart(ref chart2);
+            InitializeChart(ref chart3);
+            InitializeChart(ref chart5);
+            InitializeChart(ref chart6);
+            InitializeChart(ref chart7);
+            InitializeChart(ref chart8);
+
+
+            if (Program.watcher!=null)
             chart1.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: "+Program.watcher.statsRefreshRate + " milliseconds";
             else
                 chart1.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: " + Program.watcher.statsRefreshRate + " milliseconds";
-            chart1.GetToolTipText += chart1_GetToolTipText;
-            chart1.ChartAreas["ChartArea1"].AxisX.TitleForeColor = Color.Silver;
-            chart1.ChartAreas["ChartArea1"].AxisY.TitleForeColor = Color.Silver;
-            chart1.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = false;
-            chart1.ChartAreas["ChartArea1"].AxisY.ScrollBar.Enabled = false;
 
-            chart2.ChartAreas["ChartArea1"].AxisX.Interval = 2;
-            chart2.ChartAreas["ChartArea1"].CursorX.AutoScroll = true;
-            chart2.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
-            chart2.ChartAreas["ChartArea1"].AxisX.ScaleView.SizeType = DateTimeIntervalType.Number;
-            chart2.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoom(0, 100);
-            chart2.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
-            chart2.ChartAreas["ChartArea1"].AxisX.ScaleView.SmallScrollSize = 100;
-            chart2.ChartAreas["ChartArea1"].AxisX.InterlacedColor = Color.Silver;
-            chart2.ChartAreas["ChartArea1"].AxisX.LineColor = Color.FromArgb(60, 60, 60);
-            chart2.ChartAreas["ChartArea1"].AxisX.LineDashStyle = ChartDashStyle.Dot;
-            chart2.ChartAreas["ChartArea1"].CursorY.AutoScroll = true;
             chart2.ChartAreas["ChartArea1"].AxisY.Title = "Microwatt (uW)";
-            chart2.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: "+Program.watcher.statsRefreshRate+" milliseconds";
-            chart2.ChartAreas["ChartArea1"].AxisX.TitleForeColor = Color.Silver;
-            chart2.ChartAreas["ChartArea1"].AxisY.TitleForeColor = Color.Silver;
-            chart2.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = false;
-            chart2.ChartAreas["ChartArea1"].AxisY.ScrollBar.Enabled = false;
+       
             chart2.GetToolTipText += chart1_GetToolTipText;
 
-            chart3.ChartAreas["ChartArea1"].AxisX.Interval = 2;
-            chart3.ChartAreas["ChartArea1"].CursorX.AutoScroll = true;
-            chart3.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
-            chart3.ChartAreas["ChartArea1"].AxisX.ScaleView.SizeType = DateTimeIntervalType.Number;
-            chart3.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoom(0, 100);
-            chart3.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
-            chart3.ChartAreas["ChartArea1"].AxisX.ScaleView.SmallScrollSize = 100;
-            chart3.ChartAreas["ChartArea1"].AxisX.InterlacedColor = Color.Silver;
-            chart3.ChartAreas["ChartArea1"].AxisX.LineColor = Color.FromArgb(60, 60, 60);
-            chart3.ChartAreas["ChartArea1"].AxisX.LineDashStyle = ChartDashStyle.Dot;
-            chart3.ChartAreas["ChartArea1"].CursorY.AutoScroll = true;
+        
             chart3.ChartAreas["ChartArea1"].AxisY.Title = "Ampere (A)";
-            chart3.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: undefined milliseconds";
-            chart3.ChartAreas["ChartArea1"].AxisX.TitleForeColor = Color.Silver;
-            chart3.ChartAreas["ChartArea1"].AxisY.TitleForeColor = Color.Silver;
-            chart3.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = false;
-            chart3.ChartAreas["ChartArea1"].AxisY.ScrollBar.Enabled = false;
             chart3.GetToolTipText += chart1_GetToolTipText;
 
             flowLayoutPanel1.VerticalScroll.Enabled = true;
@@ -105,6 +95,30 @@ namespace Orchestration_Studio.GUI
             for (int i = 0; i < registeredStatistics.Count; i++)
                 flowLayoutPanel2.Controls.Add(registeredStatistics[i]);
             UpdateSelectedView();
+            selectedView1 = 1;
+            UpdateSelectedView1();
+
+
+        }
+
+        public void UpdateSelectedView1()
+        {
+            if(selectedView1==1)
+            {
+                label8.Text = "Current Power Consumption";
+                panel9.Visible = false;
+                panel8.Visible = true;
+
+            }
+            if(selectedView1==2)
+            {
+                label8.Text = "Average Power Consumption";
+
+                panel9.Visible = true;
+                panel8.Visible = false;
+
+            }
+
         }
 
         public void UpdateSelectedView()
@@ -208,12 +222,13 @@ namespace Orchestration_Studio.GUI
                 try
                 {
                     string rep = Program.shellStream.Expect(new Regex(@"[$>]")); //expect user prompt                
-                    Program.shellStream.WriteLine("sudo orchestrator");
+                    Program.shellStream.WriteLine("sudo orchestration-service");
                     rep = Program.shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
                     if (rep.Contains(":"))
                         Program.shellStream.WriteLine(Program.password);
                     toolStripStatusLabel5.Text = "Running";
                     toolStripStatusLabel5.ForeColor = Color.Green;
+                  
                            Program.watcher.Initialize();
                            Program.watcher.Connect();
                            Program.watcher.Execute();
@@ -294,10 +309,15 @@ namespace Orchestration_Studio.GUI
             chart4.ChartAreas["CPU-Little"].AxisX.ScaleView.SmallScrollSize = 100;
             chart4.GetToolTipText += chart1_GetToolTipText;
 
+            selectedView = 1;
+            UpdateSelectedView();
+            selectedView1 = 1;
+            UpdateSelectedView1();
+
 
         }
 
-        public void AppExecute(string app,string name,string throughput)
+        public void AppExecute(string app,string name,string goal,string min,string max, string profiling,string priority,string policy,string port,string args)
         {
             IDictionary<Renci.SshNet.Common.TerminalModes, uint> termkvp = new Dictionary<Renci.SshNet.Common.TerminalModes, uint>();
             termkvp.Add(Renci.SshNet.Common.TerminalModes.ECHO, 53);
@@ -306,13 +326,20 @@ namespace Orchestration_Studio.GUI
             switch (app)
             {
                 case "Video Processing":
-                    shellStream.WriteLine("sudo orch-prewitt -n \"" + name+ "\" -i \"/usr/share/orchestrator-prewitt-video/video1.avi\" -o \"/tmp/video1.avi\" -t " + throughput);
+                    shellStream.WriteLine("sudo orch-prewitt -n \"" + name+ "\" -i \"/usr/share/orchestrator-prewitt-video/video1.avi\" -o \"/tmp/video1.avi\" -t " + goal);
                     rep = shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
                     if (rep.Contains(":"))
                         shellStream.WriteLine(Program.password);
                     break;
-                case "Numbers Addition":           
-                    shellStream.WriteLine("sudo orch-application -n \"" + name + "\" -t " + throughput+" -b "+1000);
+                case "Numbers Addition":
+                    Console.WriteLine("sudo number-addition -a \"" + name + "\" -g " + goal + " -l " + min + " -h " + max + " -p " + profiling + " -n " + priority + " -r \"" + policy + "\" -o " + port + " " + args);          
+                    shellStream.WriteLine("sudo number-addition -a \"" + name + "\" -g " + goal + " -l "+min+" -h "+max+" -p "+profiling+" -n "+priority+" -r \""+policy+"\" -o "+port+" "+args);
+                    rep = shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
+                    if (rep.Contains(":"))
+                        shellStream.WriteLine(Program.password);
+                    break;
+                case "Matrix Multiplication":
+                    shellStream.WriteLine("sudo orch-mm -n \"" + name + "\" -t " + goal + " -b " + 1000);
                     rep = shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
                     if (rep.Contains(":"))
                         shellStream.WriteLine(Program.password);
@@ -322,11 +349,25 @@ namespace Orchestration_Studio.GUI
             }
         }
 
-        public void ChangeThroughput(string name,string throughput)
+        public void ChangeThroughput(string name,string goal,string min,string max)
         {
-            Program.watcher.sendCommands.Add("throughtput:" + name + ":" + throughput);
+            Program.watcher.sendCommands.Add("setms:" + name + ":" + goal + ":" + min + ":" + max);
+
+        }
+        public void ChangePriority(string name,string priority)
+        {
+            Program.watcher.sendCommands.Add("setpriority:" + name+":"+priority);
         }
 
+        public void ChangeIndPolicy(string name, string policy)
+        {
+            Program.watcher.sendCommands.Add("setipolicy:" + name + ":" + policy);
+        }
+
+        public void StopApplication(string name)
+        {
+            Program.watcher.sendCommands.Add("stop:" + name);
+        }
 
         public double convertToValue(string arg)
         {
@@ -367,8 +408,9 @@ namespace Orchestration_Studio.GUI
                         chart8.Series[statsList[i / 2].name + " - Current"].ChartType = SeriesChartType.Line;
                         chart8.Series[statsList[i / 2].name + " - Goal"].BorderWidth = 1;
                         chart8.Series[statsList[i / 2].name + " - Current"].BorderWidth = 2;
+                        chart8.Series[statsList[i / 2].name + " - Goal"].BorderDashStyle = ChartDashStyle.Dot;
                     }
-                    chart8.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].pgoal);
+                    chart8.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].offset);
                     chart8.Series[statsList[i / 2].name + " - Goal"].Points.AddXY(points, statsList[i / 2].goal);
                     if (chart8.ChartAreas[0].AxisX.Maximum >= 100)
                         chart8.ChartAreas[0].AxisX.ScaleView.Scroll(chart8.ChartAreas[0].AxisX.Maximum);
@@ -394,7 +436,7 @@ namespace Orchestration_Studio.GUI
                         chart7.Series[statsList[i ].name + " - Error"].ChartType = SeriesChartType.Line;
                         chart7.Series[statsList[i ].name + " - Error"].BorderWidth = 1;
                     }
-                    chart7.Series[statsList[i].name + " - Error"].Points.AddXY(points, statsList[i ].realerror);
+                    chart7.Series[statsList[i].name + " - Error"].Points.AddXY(points, statsList[i ].errorcurrent);
                     if (chart7.ChartAreas[0].AxisX.Maximum >= 100)
                         chart7.ChartAreas[0].AxisX.ScaleView.Scroll(chart7.ChartAreas[0].AxisX.Maximum);
                 }
@@ -419,7 +461,7 @@ namespace Orchestration_Studio.GUI
                         chart6.Series[statsList[i ].name + " - Error"].ChartType = SeriesChartType.Line;
                         chart6.Series[statsList[i ].name + " - Error"].BorderWidth = 1;
                     }
-                    chart6.Series[statsList[i].name + " - Error"].Points.AddXY(points, statsList[i].error);
+                    chart6.Series[statsList[i].name + " - Error"].Points.AddXY(points, statsList[i].erroraverage);
 
                     if (chart6.ChartAreas[0].AxisX.Maximum >= 100)
                         chart6.ChartAreas[0].AxisX.ScaleView.Scroll(chart6.ChartAreas[0].AxisX.Maximum);
@@ -448,7 +490,7 @@ namespace Orchestration_Studio.GUI
                         chart5.Series[statsList[i / 2].name + " - Goal"].BorderWidth = 1;
                         chart5.Series[statsList[i / 2].name + " - Current"].BorderWidth = 2;
                     }
-                    chart5.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].realcurrent);
+                    chart5.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].currentms);
                     chart5.Series[statsList[i / 2].name + " - Goal"].Points.AddXY(points, statsList[i / 2].goal);
                     if (chart5.ChartAreas[0].AxisX.Maximum >= 100)
                         chart5.ChartAreas[0].AxisX.ScaleView.Scroll(chart5.ChartAreas[0].AxisX.Maximum);
@@ -526,14 +568,14 @@ namespace Orchestration_Studio.GUI
                 {
                     if (cpuList[i].name.Contains("cpu0"))
                     {
-                        double value = convertToValue(cpuList[i].value);
+                        double value = convertToValue(cpuList[i].rtvalue);
                         chart4.Series[0].Points.AddXY(chart4.Series[0].Points.Count, value);
                         if (chart4.ChartAreas[0].AxisX.Maximum >= 100)
                             chart4.ChartAreas[0].AxisX.ScaleView.Scroll(chart4.ChartAreas[0].AxisX.Maximum);
                     }
                     else
                     {
-                        double value = convertToValue(cpuList[i].value);
+                        double value = convertToValue(cpuList[i].rtvalue);
                         chart4.Series[1].Points.AddXY(chart4.Series[1].Points.Count, value);
                         if (chart4.ChartAreas[1].AxisX.Maximum >= 100)
                             chart4.ChartAreas[1].AxisX.ScaleView.Scroll(chart4.ChartAreas[1].AxisX.Maximum);
@@ -575,26 +617,66 @@ namespace Orchestration_Studio.GUI
             else
             {
                 int points = maxPoint() + 1;
-                for (int i = 0; i < statsList.Count * 2; i = i + 2)
+                for (int i = 0; i < statsList.Count * 4; i = i + 4)
                 {
-                    if (chart1.Series.IndexOf(statsList[i / 2].name + " - Current") == -1)
+                    if (chart1.Series.IndexOf("AV["+statsList[i / 4].name + "]") == -1)
                     {
-                        chart1.Series.Add(statsList[i / 2].name + " - Current");
-                        chart1.Series.Add(statsList[i / 2].name + " - Goal");
-                        chart1.Series[statsList[i / 2].name + " - Goal"].ChartType = SeriesChartType.Line;
-                        chart1.Series[statsList[i / 2].name + " - Current"].ChartType = SeriesChartType.Line;
-                        chart1.Series[statsList[i / 2].name + " - Goal"].BorderWidth = 1;
-                        chart1.Series[statsList[i / 2].name + " - Current"].BorderWidth = 2;
+                        chart1.Palette = ChartColorPalette.None;
+                        chart1.Series.Add("AV[" + statsList[i / 4].name + "]");
+                        chart1.Series.Add("GL[" + statsList[i / 4].name + "]");
+                        chart1.Series.Add("MN[" + statsList[i / 4].name + "]");
+                        chart1.Series.Add("MX[" + statsList[i / 4].name + "]");
+                        chart1.Series["GL[" + statsList[i / 4].name + "]"].ChartType = SeriesChartType.Line;
+                        chart1.Series["AV[" + statsList[i / 4].name + "]"].ChartType = SeriesChartType.Line;
+                        chart1.Series["MN[" + statsList[i / 4].name + "]"].ChartType = SeriesChartType.Line;
+                        chart1.Series["MX[" + statsList[i / 4].name + "]"].ChartType = SeriesChartType.Line;
+                        chart1.Series["GL[" + statsList[i / 4].name + "]"].BorderWidth = 1;
+                        chart1.Series["AV[" + statsList[i / 4].name + "]"].BorderWidth = 2;
+                        chart1.Series["MN[" + statsList[i / 4].name + "]"].BorderWidth = 1;
+                        chart1.Series["MX[" + statsList[i / 4].name + "]"].BorderWidth = 1;
+                        chart1.Series["GL[" + statsList[i / 4].name + "]"].BorderDashStyle = ChartDashStyle.Dash;
+                        chart1.Series["MN[" + statsList[i / 4].name + "]"].BorderDashStyle = ChartDashStyle.Dot;
+                        chart1.Series["MX[" + statsList[i / 4].name + "]"].BorderDashStyle = ChartDashStyle.Dot;
+                        chart1.Series["MX[" + statsList[i / 4].name + "]"].Color = chart1.Series["MX[" + statsList[i / 4].name + "]"].Color;
+                        chart1.Series["MN[" + statsList[i / 4].name + "]"].Color = chart1.Series["MN[" + statsList[i / 4].name + "]"].Color;
+                        chart1.Series["GL[" + statsList[i / 4].name + "]"].Color = chart1.Series["GL[" + statsList[i / 4].name + "]"].Color;
+                        chart1.Series["AV[" + statsList[i / 4].name + "]"].Color = chart1.Series["AV[" + statsList[i / 4].name + "]"].Color;
+
+
+
                     }
-                    chart1.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].current);
-                    chart1.Series[statsList[i / 2].name + " - Goal"].Points.AddXY(points, statsList[i / 2].goal);
+                    chart1.Series["AV[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].averagems);
+                    chart1.Series["GL[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].goal);
+                    chart1.Series["MN[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].min);
+                    chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].max);
                     if (chart1.ChartAreas[0].AxisX.Maximum >= 100)
                         chart1.ChartAreas[0].AxisX.ScaleView.Scroll(chart1.ChartAreas[0].AxisX.Maximum);
+                    SetChartTransparency( chart1, "GL[" + statsList[i / 4].name + "]");
+                    SetChartTransparency(chart1, "MX[" + statsList[i / 4].name + "]");
+                    SetChartTransparency(chart1, "MN[" + statsList[i / 4].name + "]");
                 }
                 chart1.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: " + Program.watcher.statsRefreshRate + " milliseconds";
             }
         }
-
+        private void SetChartTransparency(Chart chart, string Seriesname)
+        {
+            bool setTransparent = true;
+            int numberOfPoints = 1;
+            chart.ApplyPaletteColors();
+            foreach (DataPoint point in chart.Series[Seriesname].Points)
+            {
+                if (setTransparent)
+                    point.Color = Color.FromArgb(0, point.Color);
+                else
+                    point.Color = Color.FromArgb(255, point.Color);
+                numberOfPoints = numberOfPoints - 1;
+                if (numberOfPoints == 0)
+                {
+                    numberOfPoints = 1;
+                    setTransparent = !setTransparent;
+                }
+            }
+        }
         private void chart2_Click(object sender, EventArgs e)
         {
 
@@ -680,7 +762,7 @@ namespace Orchestration_Studio.GUI
 
         private void videoProcessingPrewittToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            registeredApplications.Add(new UserControl1("Video Processing","video_processing",700));
+            registeredApplications.Add(new UserControl1("Video Processing","video_processing",700,400,100,0));
             flowLayoutPanel1.Controls.Clear();
             foreach( UserControl1 a in registeredApplications)
             {
@@ -696,7 +778,7 @@ namespace Orchestration_Studio.GUI
 
         private void numbersAdditionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            registeredApplications.Add(new UserControl1("Numbers Addition", "numbers_addition", 700));
+            registeredApplications.Add(new UserControl1("Numbers Addition", "numAdd"+(new Random()).Next(100,999).ToString(), 700,400,1000,0));
             flowLayoutPanel1.Controls.Clear();
             foreach (UserControl1 a in registeredApplications)
             {
@@ -787,9 +869,9 @@ namespace Orchestration_Studio.GUI
             flowLayoutPanel1.HorizontalScroll.Visible = false;
             if (flowLayoutPanel1.VerticalScroll.Visible == false)
             {
-                if (splitContainer3.SplitterDistance != splitContainer3.Width - 255)
+                if (splitContainer3.SplitterDistance != splitContainer3.Width - 287)
                 {
-                    splitContainer3.SplitterDistance = splitContainer3.Width - 255;
+                    splitContainer3.SplitterDistance = splitContainer3.Width - 287;
 
                 }
             }
@@ -801,8 +883,8 @@ namespace Orchestration_Studio.GUI
            
             if (flowLayoutPanel1.VerticalScroll.Visible == true)
             {
-                if (splitContainer3.SplitterDistance != splitContainer3.Width - 274)
-                    splitContainer3.SplitterDistance = splitContainer3.Width - 274;
+                if (splitContainer3.SplitterDistance != splitContainer3.Width - 303)
+                    splitContainer3.SplitterDistance = splitContainer3.Width - 303;
             }
          
         }
@@ -816,8 +898,8 @@ namespace Orchestration_Studio.GUI
         {
             if (flowLayoutPanel2.VerticalScroll.Visible == true)
             {
-                if (splitContainer3.SplitterDistance != splitContainer3.Width - 274)
-                    splitContainer3.SplitterDistance = splitContainer3.Width - 274;
+                if (splitContainer3.SplitterDistance != splitContainer3.Width - 303)
+                    splitContainer3.SplitterDistance = splitContainer3.Width - 303;
             }
         }
 
@@ -826,9 +908,9 @@ namespace Orchestration_Studio.GUI
             flowLayoutPanel2.HorizontalScroll.Visible = false;
             if (flowLayoutPanel2.VerticalScroll.Visible == false)
             {
-                if (splitContainer3.SplitterDistance != splitContainer3.Width - 255)
+                if (splitContainer3.SplitterDistance != splitContainer3.Width - 287)
                 {
-                    splitContainer3.SplitterDistance = splitContainer3.Width - 255;
+                    splitContainer3.SplitterDistance = splitContainer3.Width - 287;
 
                 }
             }
@@ -878,6 +960,56 @@ namespace Orchestration_Studio.GUI
         {
             selectedView = 5;
             UpdateSelectedView();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            selectedView1 = 1;
+            UpdateSelectedView1();
+        }
+
+        private void chart2_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            selectedView1 = 2;
+            UpdateSelectedView1();
+        }
+
+        private void matrixMultiplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registeredApplications.Add(new UserControl1("Matrix Multiplication", "appMM", 900,700,1300,0));
+            flowLayoutPanel1.Controls.Clear();
+            foreach (UserControl1 a in registeredApplications)
+            {
+                flowLayoutPanel1.Controls.Add(a);
+            }
+        }
+
+        private void chart1_MouseClick(object sender, MouseEventArgs e)
+        {
+            HitTestResult result = chart1.HitTest(e.X, e.Y);
+            if (result != null && result.Object != null)
+            {
+                if (result.Object is LegendItem)
+                {
+                    LegendItem legendItem = (LegendItem)result.Object;
+                    chart1.Series[legendItem.SeriesName].BorderDashStyle = chart1.Series[legendItem.SeriesName].BorderDashStyle == ChartDashStyle.NotSet ? legendItem.SeriesName[0] == 'A'? ChartDashStyle.Solid : ChartDashStyle.Dash : ChartDashStyle.NotSet;
+                }
+            }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

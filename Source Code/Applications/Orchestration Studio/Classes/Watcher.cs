@@ -86,7 +86,7 @@ namespace Orchestration_Studio.Classes
                 {
                     ((Watcher)e.Argument).socket.Send(Encoding.ASCII.GetBytes("appstats"));
                     bytesRec = ((Watcher)e.Argument).socket.Receive(bytes);
-                    Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, bytesRec).Substring(0, bytesRec));
+              
                     try
                     {
                         List<AppData> appStatSet = JsonConvert.DeserializeObject<List<AppData>>(Encoding.ASCII.GetString(bytes, 0, bytesRec).Substring(0, bytesRec));

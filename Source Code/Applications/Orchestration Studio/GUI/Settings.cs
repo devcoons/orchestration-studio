@@ -16,10 +16,7 @@ namespace Orchestration_Studio.GUI
         {
             InitializeComponent();
             comboBox1.Items.Add("- None -");
-            comboBox1.Items.Add("PowerSaving (amps)");
-            comboBox1.Items.Add("PowerSaving (watts)");
-
-
+            comboBox1.Items.Add("Usage Balancer");
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -58,15 +55,9 @@ namespace Orchestration_Studio.GUI
                 textBox3.Text = "";
                 textBox3.Enabled = false;
             }
-            if (comboBox1.SelectedItem.ToString() == "PowerSaving (amps)")
+            if (comboBox1.SelectedItem.ToString() == "Usage Balancer")
             {
-                textBox3.Text = "1";
-                textBox3.Enabled = true;
-            }
-
-            if (comboBox1.SelectedItem.ToString() == "PowerSaving (watts)")
-            {
-                textBox3.Text = "25";
+                textBox3.Text = "50";
                 textBox3.Enabled = true;
             }
         }
