@@ -40,11 +40,11 @@ namespace Orchestration_Studio.GUI
                 textBox8.ReadOnly = true;
                 textBox9.ReadOnly = true;
                 button2.Text = "Abort";
-                Program.main.AppExecute(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text,  textBox7.Text, comboBox1.SelectedItem.ToString(), textBox8.Text, textBox9.Text);
+                Classes.AppExecution.Execute(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text,  textBox7.Text, comboBox1.SelectedItem.ToString(), textBox8.Text, textBox9.Text);
             }
             else
             {
-                Program.main.StopApplication(textBox2.Text);
+                Program.watcher.sendCommands.Add("stop:" + textBox2.Text);
                 this.Dispose();           
             }
         }
@@ -60,18 +60,17 @@ namespace Orchestration_Studio.GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Program.main.ChangeIndPolicy(textBox2.Text, comboBox1.SelectedItem.ToString());
+            Program.watcher.sendCommands.Add("setipolicy:" + textBox2.Text + ":" + comboBox1.SelectedItem.ToString());
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.main.ChangeThroughput(textBox2.Text, textBox3.Text, textBox3.Text, textBox3.Text);
+            Program.watcher.sendCommands.Add("setms:" + textBox2.Text + ":" + textBox3.Text + ":" + textBox4.Text + ":" + textBox5.Text);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.main.ChangePriority(textBox2.Text,textBox7.Text);
-
+            Program.watcher.sendCommands.Add("setpriority:" + textBox2.Text + ":" + textBox7.Text);
         }
     }
 }

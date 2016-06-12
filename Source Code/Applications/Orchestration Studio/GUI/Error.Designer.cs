@@ -64,6 +64,7 @@
             this.Name = "Error";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Error";
+            this.Load += new System.EventHandler(this.Error_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

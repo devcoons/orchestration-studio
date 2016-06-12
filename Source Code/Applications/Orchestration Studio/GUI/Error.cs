@@ -17,9 +17,20 @@ namespace Orchestration_Studio.GUI
             InitializeComponent();
         }
 
+        public Error(string arg)
+        {
+            InitializeComponent();
+            label1.Text = arg;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void Error_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

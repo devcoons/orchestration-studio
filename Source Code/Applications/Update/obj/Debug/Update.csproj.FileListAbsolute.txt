@@ -9,3 +9,14 @@ C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source
 C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.csproj.GenerateResource.Cache
 C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.exe
 C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.pdb
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Update.exe.config
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Update.exe
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Update.pdb
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.csprojResolveAssemblyReference.cache
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.GUI.Error.resources
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.GUI.Main.resources
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.Properties.Resources.resources
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.XResources.resources
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.csproj.GenerateResource.Cache
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.exe
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Update\obj\Debug\Update.pdb

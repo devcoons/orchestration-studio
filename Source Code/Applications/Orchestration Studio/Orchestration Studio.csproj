@@ -57,9 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AppData.cs" />
+    <Compile Include="Classes\AppExecution.cs" />
+    <Compile Include="Classes\ChartsUpdate.cs" />
     <Compile Include="Classes\Connection.cs" />
     <Compile Include="Classes\CPUData.cs" />
     <Compile Include="Classes\Crypto.cs" />
+    <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\SysData.cs" />
     <Compile Include="Classes\Watcher.cs" />
     <Compile Include="GUI\About.cs">
