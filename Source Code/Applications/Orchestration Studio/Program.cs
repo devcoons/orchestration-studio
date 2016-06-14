@@ -24,7 +24,7 @@ namespace Orchestration_Studio
         [STAThread]
         static void Main(string[] args)
         {
-          /*
+          
             if(args.Count()<=0)
             {
                 ProcessStartInfo info = new ProcessStartInfo(@"" + Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),"Update.exe"));
@@ -39,7 +39,7 @@ namespace Orchestration_Studio
                 }
                 Environment.Exit(0);
             }
-             */
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             connections = new List<Classes.Connection>();      

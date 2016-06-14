@@ -78,3 +78,6 @@ C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchest
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.Properties.Resources.resources
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.XResources.resources
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csproj.GenerateResource.Cache
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.exe.config
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.exe
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.pdb

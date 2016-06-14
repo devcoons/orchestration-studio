@@ -62,7 +62,7 @@ namespace lib.update
         public void Action_1(object arg)
         {
             ChangeStatus("Loading Libraries...", arg); 
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
 
           
               NextAction(arg);
@@ -70,13 +70,13 @@ namespace lib.update
         public void Action_2(object arg)
         {
             ChangeStatus("Waiting for server response...", arg);
-            Thread.Sleep(1000);
+            Thread.Sleep(200);
             NextAction(arg);
         }
         public void Action_3(object arg)
         {
             ChangeStatus("Checking for available updates...", arg);
-            Thread.Sleep(1000);
+            Thread.Sleep(200);
             NextAction(arg);
         }
         public void Action_4(object arg)
