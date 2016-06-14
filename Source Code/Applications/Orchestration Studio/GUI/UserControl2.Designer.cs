@@ -39,10 +39,11 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(169, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -50,7 +51,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(175, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 24);
+            this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -64,7 +65,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(232, 24);
+            this.Size = new System.Drawing.Size(264, 24);
             this.Load += new System.EventHandler(this.UserControl2_Load);
             this.ResumeLayout(false);
 
