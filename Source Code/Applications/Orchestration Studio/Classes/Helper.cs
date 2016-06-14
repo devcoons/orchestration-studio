@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -11,25 +7,21 @@ namespace Orchestration_Studio.Classes
 {
     public static class Helper
     {
-        public static void SetChartTransparency(Chart chart, string Seriesname, int steps)
+        public static void SetChartTransparency(Chart chart, string Seriesname, int numberOfPoints)
         {
             bool setTransparent = true;
-            int numberOfPoints = steps;
             chart.ApplyPaletteColors();
             foreach (DataPoint point in chart.Series[Seriesname].Points)
             {
-                if (setTransparent)
-                    point.Color = Color.FromArgb(0, point.Color);
-                else
-                    point.Color = Color.FromArgb(255, point.Color);
-                numberOfPoints = numberOfPoints - 1;
-                if (numberOfPoints == 0)
+                point.Color = setTransparent ? Color.FromArgb(0, point.Color): Color.FromArgb(255, point.Color);
+                if (--numberOfPoints == 0)
                 {
                     numberOfPoints = 1;
                     setTransparent = !setTransparent;
                 }
             }
         }
+
         public static void SetChartInitState(Chart chart)
         {
             chart.GetToolTipText += chart_GetToolTipText;
@@ -59,6 +51,7 @@ namespace Orchestration_Studio.Classes
             chart.MouseEnter += chartArea_MouseEnter;
             chart.MouseLeave += chartArea_MouseLeave;
             chart.MouseClick += chart_MouseClick;
+       //     chart.MouseWheel += new MouseEventHandler(chartArea_MouseWheel);
         }
 
         public static void SetChartInitState(Chart chart, string chartArea,string axisYTitle, string axisXTitle, int axisYMin, int axisYMax, int axisYInterval)
@@ -113,9 +106,42 @@ namespace Orchestration_Studio.Classes
             }
         }
 
+        public static void chartArea_MouseWheel(object sender, MouseEventArgs e)
+        {
+            Chart chart = (Chart)sender;
+            foreach (ChartArea chartArea in chart.ChartAreas)
+            {
+                try
+                {
+                    chartArea.AxisX.ScaleView.SmallScrollSize = 100;
+                    if (e.Delta< 0)
+                    {
+                        Console.WriteLine("-1");
+                        chartArea.AxisX.Minimum = chartArea.AxisX.Minimum - 10 >= 0 ? chartArea.AxisX.Minimum - 10 : 0;
+                        chartArea.AxisX.Maximum = maxPoint(chart) <= 100 ? 100 : maxPoint(chart);
+                        chartArea.AxisX.ScaleView.Zoom(chartArea.AxisX.Minimum, chartArea.AxisX.Maximum);
+                        chartArea.AxisX.ScaleView.Scroll(chartArea.AxisX.Maximum);
+                    }
+
+                    if (e.Delta > 0)
+                    {
+                        chartArea.AxisX.Minimum = maxPoint(chart) - 100 >= 0 ? maxPoint(chart) - 100 : 0;
+                        chartArea.AxisX.Maximum = maxPoint(chart) <= 100 ? 100 : maxPoint(chart);
+                        chartArea.AxisX.ScaleView.Zoom(chartArea.AxisX.Minimum, chartArea.AxisX.Maximum);
+                        chartArea.AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+                        chartArea.AxisX.ScrollBar.Enabled = false;
+                        chartArea.AxisY.ScrollBar.Enabled = false;
+                        chartArea.AxisX.ScaleView.Scroll(chartArea.AxisX.Maximum);
+                    }                 
+                }
+                catch { }
+            }
+        }
+
         public static void chartArea_MouseEnter(object sender, EventArgs e)
         {
             Chart chart = (Chart)sender;
+            chart.Focus();
             foreach (ChartArea chartArea in chart.ChartAreas)
             {
                 chartArea.AxisX.ScrollBar.Enabled = true;
@@ -126,6 +152,7 @@ namespace Orchestration_Studio.Classes
         public static void chartArea_MouseLeave(object sender, EventArgs e)
         {
             Chart chart = (Chart)sender;
+            chart.Parent.Focus();
             foreach (ChartArea chartArea in chart.ChartAreas)
             {
                 chartArea.AxisX.ScrollBar.Enabled = false;

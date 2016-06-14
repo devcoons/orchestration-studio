@@ -10,5 +10,6 @@ namespace Orchestration_Studio.Classes
     {
         public string name;
         public string data;
+        public string kdata;
     }
 }

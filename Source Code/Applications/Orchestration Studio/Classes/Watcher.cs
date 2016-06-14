@@ -141,6 +141,8 @@ namespace Orchestration_Studio.Classes
                         if (cpuStatSet.Count != 0)
                         {
                             Program.main.UpdateCPUChart(cpuStatSet);
+                            Program.main.UpdateAPUChart(cpuStatSet);
+                            Program.main.UpdateNPUChart(cpuStatSet);
                         }
                     }
                     catch (Exception)
