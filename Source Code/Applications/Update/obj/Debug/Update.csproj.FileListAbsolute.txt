@@ -1,0 +1,11 @@
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Update.exe.config
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Update.exe
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Update.pdb
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.csprojResolveAssemblyReference.cache
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.GUI.Error.resources
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.GUI.Main.resources
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.Properties.Resources.resources
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.XResources.resources
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.csproj.GenerateResource.Cache
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.exe
+C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Update\obj\Debug\Update.pdb
