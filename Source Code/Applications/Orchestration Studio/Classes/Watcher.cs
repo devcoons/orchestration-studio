@@ -21,7 +21,7 @@ namespace Orchestration_Studio.Classes
         public List<string> sendCommands;
         public volatile int statsRefreshRate = 500;
         public volatile int loopRefreshRate = 25000;
-        public volatile string globalPolicy = "- Free -";
+        public volatile string globalPolicy = "- None -";
         public volatile string globalPolicyParameters = "";
 
 

@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Globalization;
 
 namespace Orchestration_Studio.GUI
 {
@@ -28,20 +27,14 @@ namespace Orchestration_Studio.GUI
             
             registeredApplications = new List<UserControl1>();
             registeredStatistics = new List<UserControl2>();
-            registeredStatistics.Add(new UserControl2("CPU A59 Raw Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Raw Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPU A59 Filtered Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Filtered Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPUs Raw Average Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPUs Filtered Average Usage:", "0%"));
-            registeredStatistics.Add(new UserControl2("CPU A59 Raw Power:", "0uW"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Raw Power:", "0uW"));
-            registeredStatistics.Add(new UserControl2("CPU A59 Filtered Power:", "0uW"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Filtered Power:", "0uW"));
-            registeredStatistics.Add(new UserControl2("CPU A59 Raw Current:", "0mA"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Raw Current:", "0mA"));
-            registeredStatistics.Add(new UserControl2("CPU A59 Filtered Current:", "0mA"));
-            registeredStatistics.Add(new UserControl2("CPU A57 Filtered Current:", "0mA"));
+            registeredStatistics.Add(new UserControl2("CPU A59 Average Usage:", "0%"));
+            registeredStatistics.Add(new UserControl2("CPU A52 Average Usage:", "0%"));
+            registeredStatistics.Add(new UserControl2("CPU A59 Average Power:", "0uW"));
+            registeredStatistics.Add(new UserControl2("CPU A52 Average Power:", "0uW"));
+            registeredStatistics.Add(new UserControl2("CPU A59 Average uA:", "0uA"));
+            registeredStatistics.Add(new UserControl2("CPU A52 Average uA:", "0uA"));
+            registeredStatistics.Add(new UserControl2("SYS Board Average Power:", "0uW"));
+            registeredStatistics.Add(new UserControl2("SYS Board Average uA:", "0uA"));
 
             flowLayoutPanel1.VerticalScroll.Visible = true;
             flowLayoutPanel1.HorizontalScroll.Visible = false;
@@ -201,7 +194,7 @@ namespace Orchestration_Studio.GUI
                         chart8.Series[statsList[i / 2].name + " - Goal"].BorderDashStyle = ChartDashStyle.Dot;
                     }
                     chart8.Series[statsList[i / 2].name + " - Current"].Points.AddXY(points, statsList[i / 2].offset);
-                    chart8.Series[statsList[i / 2].name + " - Goal"].Points.AddXY(points, statsList[i / 2].initgoal);
+                    chart8.Series[statsList[i / 2].name + " - Goal"].Points.AddXY(points, statsList[i / 2].goal);
                     if (chart8.ChartAreas[0].AxisX.Maximum >= 100)
                         chart8.ChartAreas[0].AxisX.ScaleView.Scroll(chart8.ChartAreas[0].AxisX.Maximum);
                 }
@@ -325,16 +318,6 @@ namespace Orchestration_Studio.GUI
                         chart2.Series[statsList[i].name].Points.AddXY(chart2.Series[statsList[i].name].Points.Count, value1);
                         if (chart2.ChartAreas[0].AxisX.Maximum >= 100)
                             chart2.ChartAreas[0].AxisX.ScaleView.Scroll(chart2.ChartAreas[0].AxisX.Maximum);
-                        if(statsList[i].name.Contains("BIG") || statsList[i].name.Contains("LITTLE"))
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPU A59 Raw Power:" && statsList[i].name.Contains("BIG"))
-                                control.UpdateValue(string.Format("{0:0.00}", Classes.Helper.ConvertToValue(statsList[i].data)) + "mW");
-                            else if (control.getLabel() == "CPU A59 Filtered Power:" && statsList[i].name.Contains("BIG"))
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "mW");
-                            else if (control.getLabel() == "CPU A57 Raw Power:" && statsList[i].name.Contains("LITTLE"))
-                                control.UpdateValue(string.Format("{0:0.00}", Classes.Helper.ConvertToValue(statsList[i].data)) + "mW");
-                            else if (control.getLabel() == "CPU A57 Filtered Power:" && statsList[i].name.Contains("LITTLE"))
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "mW");
                     }
                 }
                 chart9.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: " + Program.watcher.statsRefreshRate + " milliseconds";
@@ -364,16 +347,6 @@ namespace Orchestration_Studio.GUI
                         chart13.Series[statsList[i].name].Points.AddXY(chart13.Series[statsList[i].name].Points.Count, value1);
                         if (chart13.ChartAreas[0].AxisX.Maximum >= 100)
                             chart13.ChartAreas[0].AxisX.ScaleView.Scroll(Classes.Helper.maxPoint(chart13));
-                        if (statsList[i].name.Contains("BIG") || statsList[i].name.Contains("LITTLE"))
-                            foreach (UserControl2 control in registeredStatistics)
-                                if (control.getLabel() == "CPU A59 Raw Current:" && statsList[i].name.Contains("BIG"))
-                                    control.UpdateValue(string.Format("{0:0.00}", Classes.Helper.ConvertToValue(statsList[i].data)) + "mA");
-                                else if (control.getLabel() == "CPU A59 Filtered Current:" && statsList[i].name.Contains("BIG"))
-                                    control.UpdateValue(string.Format("{0:0.00}", value) + "mA");
-                                else if (control.getLabel() == "CPU A57 Raw Current:" && statsList[i].name.Contains("LITTLE"))
-                                    control.UpdateValue(string.Format("{0:0.00}", Classes.Helper.ConvertToValue(statsList[i].data)) + "mA");
-                                else if (control.getLabel() == "CPU A57 Filtered Current:" && statsList[i].name.Contains("LITTLE"))
-                                    control.UpdateValue(string.Format("{0:0.00}", value) + "mA");
                     }
                 }
                 chart3.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: " + Program.watcher.statsRefreshRate + " milliseconds";
@@ -400,9 +373,6 @@ namespace Orchestration_Studio.GUI
                         chart4.Series[0].Points.AddXY(chart4.Series[0].Points.Count, value);
                         if (chart4.ChartAreas[0].AxisX.Maximum >= 100)
                             chart4.ChartAreas[0].AxisX.ScaleView.Scroll(chart4.ChartAreas[0].AxisX.Maximum);
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPU A59 Raw Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "%");
                     }
                     else if(cpuList[i].name.Contains("cpu1"))
                     {
@@ -410,9 +380,6 @@ namespace Orchestration_Studio.GUI
                         chart4.Series[1].Points.AddXY(chart4.Series[1].Points.Count, value);
                         if (chart4.ChartAreas[1].AxisX.Maximum >= 100)
                             chart4.ChartAreas[1].AxisX.ScaleView.Scroll(chart4.ChartAreas[1].AxisX.Maximum);
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPU A57 Raw Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "%");
                     }
                 }
             }
@@ -437,9 +404,6 @@ namespace Orchestration_Studio.GUI
                         chart10.Series[0].Points.AddXY(chart10.Series[0].Points.Count, value);
                         if (chart10.ChartAreas[0].AxisX.Maximum >= 100)
                             chart10.ChartAreas[0].AxisX.ScaleView.Scroll(chart10.ChartAreas[0].AxisX.Maximum);
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPU A59 Filtered Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "%");
                     }
                     else if (cpuList[i].name.Contains("cpu1"))
                     {
@@ -447,9 +411,6 @@ namespace Orchestration_Studio.GUI
                         chart10.Series[1].Points.AddXY(chart10.Series[1].Points.Count, value);
                         if (chart10.ChartAreas[1].AxisX.Maximum >= 100)
                             chart10.ChartAreas[1].AxisX.ScaleView.Scroll(chart10.ChartAreas[1].AxisX.Maximum);
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPU A57 Filtered Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "%");
                     }
                 }
             }
@@ -479,11 +440,6 @@ namespace Orchestration_Studio.GUI
                         chart11.Series[1].Points.AddXY(chart11.Series[1].Points.Count, value1);
                         if (chart11.ChartAreas[1].AxisX.Maximum >= 100)
                             chart11.ChartAreas[1].AxisX.ScaleView.Scroll(chart11.ChartAreas[1].AxisX.Maximum);
-                        foreach (UserControl2 control in registeredStatistics)
-                            if (control.getLabel() == "CPUs Raw Average Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value) + "%");
-                            else if(control.getLabel() == "CPUs Filtered Average Usage:")
-                                control.UpdateValue(string.Format("{0:0.00}", value1) + "%");
                     }
                 }
             }
@@ -537,9 +493,9 @@ namespace Orchestration_Studio.GUI
                     if (chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.Count < points - 1)
                         while (chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.Count != points - 1)
                             chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.AddXY(chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.Count, 0);
-  
+
                     chart1.Series["AV[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].averagems);
-                    chart1.Series["GL[" + statsList[i / 4].name + "]"].Points.AddXY(points,statsList[i / 4].goal);
+                    chart1.Series["GL[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].goal);
                     chart1.Series["MN[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].min);
                     chart1.Series["MX[" + statsList[i / 4].name + "]"].Points.AddXY(points, statsList[i / 4].max);
                     if (chart1.ChartAreas[0].AxisX.Maximum >= 100)
@@ -551,8 +507,7 @@ namespace Orchestration_Studio.GUI
                 chart1.ChartAreas["ChartArea1"].AxisX.Title = "Current Sampling Rate: " + Program.watcher.statsRefreshRate + " milliseconds";
             }
         }
-
-
+    
         private void Main_Shown(object sender, EventArgs e)
         {      
             (new GUI.ConnectionsManager()).ShowDialog();
@@ -743,11 +698,5 @@ namespace Orchestration_Studio.GUI
             selectedView2 = 0;
             UpdateSelectedView2();
         }
-
-        public void ChangeGlobalPolicy(string arg)
-        {
-
-        }
-
     }
 }

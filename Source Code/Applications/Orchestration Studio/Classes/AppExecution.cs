@@ -25,13 +25,14 @@ namespace Orchestration_Studio.Classes
                         shellStream.WriteLine(Program.password);
                     break;
                 case "Numbers Addition":
+                    Console.WriteLine("sudo number-addition -a \"" + name + "\" -g " + goal + " -l " + min + " -h " + max + " -p " + profiling + " -n " + priority + " -r \"" + policy + "\" -o " + port + " " + args);
                     shellStream.WriteLine("sudo number-addition -a \"" + name + "\" -g " + goal + " -l " + min + " -h " + max + " -p " + profiling + " -n " + priority + " -r \"" + policy + "\" -o " + port + " " + args);
                     rep = shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
                     if (rep.Contains(":"))
                         shellStream.WriteLine(Program.password);
                     break;
                 case "Matrix Multiplication":
-                    shellStream.WriteLine("sudo matrix-multiplication -a \"" + name + "\" -g " + goal + " -l " + min + " -h " + max + " -p " + profiling + " -n " + priority + " -r \"" + policy + "\" -o " + port + " " + args);
+                    shellStream.WriteLine("sudo orch-mm -n \"" + name + "\" -t " + goal + " -b " + 1000);
                     rep = shellStream.Expect(new Regex(@"([$#>:])")); //expect password or user prompt
                     if (rep.Contains(":"))
                         shellStream.WriteLine(Program.password);

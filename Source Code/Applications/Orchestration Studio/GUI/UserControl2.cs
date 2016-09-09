@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace Orchestration_Studio.GUI
 {
-    delegate void SetStatsValue(string value);
     public partial class UserControl2 : UserControl
     {
         public UserControl2(string title,string value)
@@ -25,28 +24,11 @@ namespace Orchestration_Studio.GUI
 
         }
 
-        public string getLabel()
+        public void UpdateValue(string a)
         {
-            return label1.Text;
+            label2.Text = a;
         }
 
 
-        public void UpdateValue(string value)
-        {
-            if (this.label2.InvokeRequired)
-            {
-                SetStatsValue d = new SetStatsValue(UpdateValue);
-                this.Invoke(d, new object[] { value });
-            }
-            else
-            {
-                label2.Text = value;
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

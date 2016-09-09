@@ -10,7 +10,7 @@ namespace lib.update
     {
         public string getTitle()
         {
-            return "Orchestrator Studio ©";
+            return "Orchestration Studio ©";
         }
 
         public string getUpperTitle()
