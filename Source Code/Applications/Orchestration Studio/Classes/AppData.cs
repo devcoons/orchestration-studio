@@ -10,6 +10,7 @@ namespace Orchestration_Studio.Classes
     {
         public string pid;
         public string name;
+        public string initgoal;
         public string goal;
         public string min;
         public string max;

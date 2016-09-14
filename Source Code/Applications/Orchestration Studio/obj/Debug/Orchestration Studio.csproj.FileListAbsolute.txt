@@ -78,48 +78,26 @@ C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchest
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.Properties.Resources.resources
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.XResources.resources
 C:\Users\Io. D\Desktop\GIT\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csproj.GenerateResource.Cache
-C:\Io.D\OneDrive\Projects\Applications\Executable\Orchestration Studio.exe.config
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.exe
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.pdb
-C:\Io.D\OneDrive\Projects\Applications\Executable\Orchestration Studio.exe
-C:\Io.D\OneDrive\Projects\Applications\Executable\Orchestration Studio.pdb
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.About.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.ConnectionsManager.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.EncryptionPassword.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Error.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Feedback.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Help.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.LibrariesManager.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Main.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Settings.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl1.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl2.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.Properties.Resources.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.XResources.resources
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csproj.GenerateResource.Cache
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.exe.config
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.exe
-C:\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.pdb
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.exe.config
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.exe
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.pdb
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.exe
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Executable\Orchestration Studio.pdb
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csprojResolveAssemblyReference.cache
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.About.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.ConnectionsManager.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.EncryptionPassword.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Error.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Feedback.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Help.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.LibrariesManager.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Main.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Settings.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl1.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl2.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.Properties.Resources.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.XResources.resources
-C:\Users\Io.D\OneDrive\Projects\Applications\Heterogeneous Orchestration Studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csproj.GenerateResource.Cache
-C:\Users\Io.D\Desktop\New folder (11)\orchestration-studio\Executable\Orchestration Studio.exe.config
-C:\Users\Io.D\Desktop\New folder (11)\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.exe
-C:\Users\Io.D\Desktop\New folder (11)\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.pdb
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.exe.config
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.exe
+C:\Users\Io. D\Desktop\GIT\orchestration-studio\Executable\Orchestration Studio.pdb
+C:\Users\admin\Documents\orchestration-studio\Executable\Orchestration Studio.exe.config
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.exe
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.pdb
+C:\Users\admin\Documents\orchestration-studio\Executable\Orchestration Studio.exe
+C:\Users\admin\Documents\orchestration-studio\Executable\Orchestration Studio.pdb
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.About.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.ConnectionsManager.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.EncryptionPassword.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Error.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Feedback.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Help.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.LibrariesManager.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Main.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.Settings.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl1.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.GUI.UserControl2.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.Properties.Resources.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration_Studio.XResources.resources
+C:\Users\admin\Documents\orchestration-studio\Source Code\Applications\Orchestration Studio\obj\Debug\Orchestration Studio.csproj.GenerateResource.Cache

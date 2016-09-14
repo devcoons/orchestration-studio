@@ -62,7 +62,7 @@ namespace lib.update
         public void Action_1(object arg)
         {
             ChangeStatus("Loading Libraries...", arg); 
-            Thread.Sleep(200);
+            Thread.Sleep(1500);
 
           
               NextAction(arg);

@@ -39,7 +39,7 @@ namespace Orchestration_Studio
                 }
                 Environment.Exit(0);
             }
-             
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             connections = new List<Classes.Connection>();      

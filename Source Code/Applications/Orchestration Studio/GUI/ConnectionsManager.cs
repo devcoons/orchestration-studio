@@ -151,6 +151,7 @@ namespace Orchestration_Studio.GUI
                 return;
 
             (new GUI.EncryptionPassword()).ShowDialog();
+
             Program.client = new Renci.SshNet.SshClient(Program.connections[listBox1.SelectedIndex].host,4487, Program.connections[listBox1.SelectedIndex].username, Program.password);
 
             Program.client.ConnectionInfo.Timeout = new TimeSpan(0, 0, 5);
@@ -158,7 +159,9 @@ namespace Orchestration_Studio.GUI
             {
                 Program.client.Connect();
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+            }
             if (Program.client.IsConnected != true)
             {
                 MessageBox.Show("Connection Failed", "There was an error connecting to " + Program.connections[listBox1.SelectedIndex].host + ". Please try again.");

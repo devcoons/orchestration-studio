@@ -99,6 +99,8 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -464,7 +466,9 @@
             this.toolStripStatusLabel5,
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel6,
-            this.toolStripStatusLabel3});
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel7,
+            this.toolStripStatusLabel8});
             this.statusStrip1.Location = new System.Drawing.Point(0, 641);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -516,6 +520,21 @@
             this.toolStripStatusLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(54, 17);
             this.toolStripStatusLabel3.Text = "Watcher:";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.ActiveLinkColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel7.ForeColor = System.Drawing.Color.Magenta;
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(62, 17);
+            this.toolStripStatusLabel7.Text = "[0] - Free -";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel8.Text = ":Active Global Policy";
             // 
             // splitContainer1
             // 
@@ -2115,5 +2134,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart9;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
     }
 }
