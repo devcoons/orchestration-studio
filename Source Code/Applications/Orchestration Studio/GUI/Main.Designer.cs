@@ -69,6 +69,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.loadScenarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orchestratedVsNonOrchestratedApplicationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageProcessingSobel2xCPU2xGPPUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageProcessingSobel2xCPU2xPCIeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.importDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,9 +84,9 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numbersAdditionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.videoProcessingPrewittToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageProcessingSobleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixMultiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageProcessingSobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.workloadMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orchestratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -101,6 +109,8 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -275,6 +285,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.loadScenarioToolStripMenuItem,
             this.toolStripSeparator3,
             this.importDataToolStripMenuItem,
             this.exportToolStripMenuItem,
@@ -287,45 +299,99 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.newToolStripMenuItem.Text = "New ";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(145, 6);
+            // 
+            // loadScenarioToolStripMenuItem
+            // 
+            this.loadScenarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orchestratedVsNonOrchestratedApplicationToolStripMenuItem1,
+            this.matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem,
+            this.imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem,
+            this.imageProcessingSobel2xCPU2xGPPUToolStripMenuItem,
+            this.imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem,
+            this.imageProcessingSobel2xCPU2xPCIeToolStripMenuItem});
+            this.loadScenarioToolStripMenuItem.Name = "loadScenarioToolStripMenuItem";
+            this.loadScenarioToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.loadScenarioToolStripMenuItem.Text = "Load Scenario";
+            // 
+            // orchestratedVsNonOrchestratedApplicationToolStripMenuItem1
+            // 
+            this.orchestratedVsNonOrchestratedApplicationToolStripMenuItem1.Name = "orchestratedVsNonOrchestratedApplicationToolStripMenuItem1";
+            this.orchestratedVsNonOrchestratedApplicationToolStripMenuItem1.Size = new System.Drawing.Size(409, 22);
+            this.orchestratedVsNonOrchestratedApplicationToolStripMenuItem1.Text = "1 - Orchestrated vs non-Orchestrated Application";
+            // 
+            // matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem
+            // 
+            this.matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem.Name = "matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem";
+            this.matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem.Size = new System.Drawing.Size(409, 22);
+            this.matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem.Text = "2 - Matrix Multiplication (2xCPU-2xGPPU-2xNoGPPU)";
+            // 
+            // imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem
+            // 
+            this.imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem.Name = "imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem";
+            this.imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem.Size = new System.Drawing.Size(409, 22);
+            this.imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem.Text = "3 - Image Processing Sobel (2xCPU-2xGPPU-2xNoGPPU-2xPCIe)";
+            // 
+            // imageProcessingSobel2xCPU2xGPPUToolStripMenuItem
+            // 
+            this.imageProcessingSobel2xCPU2xGPPUToolStripMenuItem.Name = "imageProcessingSobel2xCPU2xGPPUToolStripMenuItem";
+            this.imageProcessingSobel2xCPU2xGPPUToolStripMenuItem.Size = new System.Drawing.Size(409, 22);
+            this.imageProcessingSobel2xCPU2xGPPUToolStripMenuItem.Text = "4 - Image Processing Sobel (2xCPU-2xGPPU)";
+            // 
+            // imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem
+            // 
+            this.imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem.Name = "imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem";
+            this.imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem.Size = new System.Drawing.Size(409, 22);
+            this.imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem.Text = "5 - Image Processing Sobel (2xCPU-2xnoGPPU)";
+            // 
+            // imageProcessingSobel2xCPU2xPCIeToolStripMenuItem
+            // 
+            this.imageProcessingSobel2xCPU2xPCIeToolStripMenuItem.Name = "imageProcessingSobel2xCPU2xPCIeToolStripMenuItem";
+            this.imageProcessingSobel2xCPU2xPCIeToolStripMenuItem.Size = new System.Drawing.Size(409, 22);
+            this.imageProcessingSobel2xCPU2xPCIeToolStripMenuItem.Text = "6 - Image Processing Sobel (2xCPU-2xPCIe)";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
             // 
             // importDataToolStripMenuItem
             // 
             this.importDataToolStripMenuItem.Name = "importDataToolStripMenuItem";
-            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.importDataToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.importDataToolStripMenuItem.Text = "Import Data";
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exportToolStripMenuItem.Text = "Export Data";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(145, 6);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.numbersAdditionToolStripMenuItem,
-            this.videoProcessingPrewittToolStripMenuItem,
-            this.imageProcessingSobleToolStripMenuItem,
-            this.matrixMultiplicationToolStripMenuItem});
+            this.matrixMultiplicationToolStripMenuItem,
+            this.imageProcessingSobelToolStripMenuItem,
+            this.workloadMakerToolStripMenuItem});
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.applicationsToolStripMenuItem.Text = "Applications";
@@ -333,30 +399,30 @@
             // numbersAdditionToolStripMenuItem
             // 
             this.numbersAdditionToolStripMenuItem.Name = "numbersAdditionToolStripMenuItem";
-            this.numbersAdditionToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.numbersAdditionToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.numbersAdditionToolStripMenuItem.Text = "Numbers Addition";
             this.numbersAdditionToolStripMenuItem.Click += new System.EventHandler(this.numbersAdditionToolStripMenuItem_Click);
-            // 
-            // videoProcessingPrewittToolStripMenuItem
-            // 
-            this.videoProcessingPrewittToolStripMenuItem.Name = "videoProcessingPrewittToolStripMenuItem";
-            this.videoProcessingPrewittToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.videoProcessingPrewittToolStripMenuItem.Text = "Video Processing Prewitt";
-            this.videoProcessingPrewittToolStripMenuItem.Click += new System.EventHandler(this.videoProcessingPrewittToolStripMenuItem_Click);
-            // 
-            // imageProcessingSobleToolStripMenuItem
-            // 
-            this.imageProcessingSobleToolStripMenuItem.Enabled = false;
-            this.imageProcessingSobleToolStripMenuItem.Name = "imageProcessingSobleToolStripMenuItem";
-            this.imageProcessingSobleToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.imageProcessingSobleToolStripMenuItem.Text = "Image Processing Sobel";
             // 
             // matrixMultiplicationToolStripMenuItem
             // 
             this.matrixMultiplicationToolStripMenuItem.Name = "matrixMultiplicationToolStripMenuItem";
-            this.matrixMultiplicationToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.matrixMultiplicationToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.matrixMultiplicationToolStripMenuItem.Text = "Matrix Multiplication";
             this.matrixMultiplicationToolStripMenuItem.Click += new System.EventHandler(this.matrixMultiplicationToolStripMenuItem_Click);
+            // 
+            // imageProcessingSobelToolStripMenuItem
+            // 
+            this.imageProcessingSobelToolStripMenuItem.Name = "imageProcessingSobelToolStripMenuItem";
+            this.imageProcessingSobelToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.imageProcessingSobelToolStripMenuItem.Text = "Image Processing Sobel";
+            this.imageProcessingSobelToolStripMenuItem.Click += new System.EventHandler(this.imageProcessingSobelToolStripMenuItem_Click);
+            // 
+            // workloadMakerToolStripMenuItem
+            // 
+            this.workloadMakerToolStripMenuItem.Name = "workloadMakerToolStripMenuItem";
+            this.workloadMakerToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.workloadMakerToolStripMenuItem.Text = "[ Workload Maker ]";
+            this.workloadMakerToolStripMenuItem.Click += new System.EventHandler(this.workloadMakerToolStripMenuItem_Click);
             // 
             // orchestratorToolStripMenuItem
             // 
@@ -468,7 +534,9 @@
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel7,
-            this.toolStripStatusLabel8});
+            this.toolStripStatusLabel8,
+            this.toolStripStatusLabel10,
+            this.toolStripStatusLabel9});
             this.statusStrip1.Location = new System.Drawing.Point(0, 641);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -535,6 +603,22 @@
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
             this.toolStripStatusLabel8.Size = new System.Drawing.Size(115, 17);
             this.toolStripStatusLabel8.Text = ":Active Global Policy";
+            // 
+            // toolStripStatusLabel10
+            // 
+            this.toolStripStatusLabel10.AutoSize = false;
+            this.toolStripStatusLabel10.ForeColor = System.Drawing.Color.Lime;
+            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
+            this.toolStripStatusLabel10.Size = new System.Drawing.Size(100, 17);
+            this.toolStripStatusLabel10.Text = "none";
+            this.toolStripStatusLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabel9
+            // 
+            this.toolStripStatusLabel9.ForeColor = System.Drawing.Color.White;
+            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
+            this.toolStripStatusLabel9.Size = new System.Drawing.Size(90, 17);
+            this.toolStripStatusLabel9.Text = ":Selected Kernel";
             // 
             // splitContainer1
             // 
@@ -2050,9 +2134,7 @@
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripMenuItem videoProcessingPrewittToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matrixMultiplicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem numbersAdditionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -2136,5 +2218,17 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem workloadMakerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem loadScenarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orchestratedVsNonOrchestratedApplicationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem matrixMultiplication2xCPU2xGPPU2xNoGPPUToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobel2xCPU2xGPPU2xNoGPPU2xPCIeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobel2xCPU2xGPPUToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobel2xCPU2xnoGPPUToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageProcessingSobel2xCPU2xPCIeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
     }
 }

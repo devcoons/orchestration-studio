@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -87,11 +88,11 @@ namespace Orchestration_Studio.Classes
             if (arg.Contains("mW")) converter = 1000;
             for (char i = 'A'; i < 'z'; i++)
                 arg = arg.Replace(i, ' ');
-            arg = arg.Replace('.', ',');
+            arg = arg.Replace(',', '.');
             arg = arg.Replace('+', ' ');
             arg = arg.Replace('-', ' ');
             arg = arg.Replace(" ", "");
-            a = double.Parse(arg);
+            a = double.Parse(arg, CultureInfo.InvariantCulture);
             return a * converter;
         }
 

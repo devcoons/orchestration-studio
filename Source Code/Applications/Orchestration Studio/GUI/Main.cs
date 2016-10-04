@@ -641,7 +641,7 @@ namespace Orchestration_Studio.GUI
 
         private void matrixMultiplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            registeredApplications.Add(new UserControl1("Matrix Multiplication", "appMM", 900,700,1300,0));
+            registeredApplications.Add(new UserControl1("Matrix Multiplication", "appMM", 900, 700, 1300, 0));
             flowLayoutPanel1.Controls.Clear();
             foreach (UserControl1 a in registeredApplications)
                 flowLayoutPanel1.Controls.Add(a);
@@ -744,10 +744,20 @@ namespace Orchestration_Studio.GUI
             UpdateSelectedView2();
         }
 
-        public void ChangeGlobalPolicy(string arg)
+        private void workloadMakerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            registeredApplications.Add(new UserControl1("Workload Maker", "load", 0, 0, 0, 0));
+            flowLayoutPanel1.Controls.Clear();
+            foreach (UserControl1 a in registeredApplications)
+                flowLayoutPanel1.Controls.Add(a);
         }
 
+        private void imageProcessingSobelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registeredApplications.Add(new UserControl1("Image Processing Sobel", "appMM", 900, 700, 1300, 0));
+            flowLayoutPanel1.Controls.Clear();
+            foreach (UserControl1 a in registeredApplications)
+                flowLayoutPanel1.Controls.Add(a);
+        }
     }
 }

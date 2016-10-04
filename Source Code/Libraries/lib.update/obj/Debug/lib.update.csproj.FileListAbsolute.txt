@@ -13,3 +13,13 @@ C:\Users\admin\Documents\orchestration-studio\Executable\libraries\lib.update.pd
 C:\Users\admin\Documents\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.csprojResolveAssemblyReference.cache
 C:\Users\admin\Documents\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.dll
 C:\Users\admin\Documents\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.pdb
+C:\Users\Io.D\Desktop\orchestration-studio\Executable\libraries\lib.update.dll
+C:\Users\Io.D\Desktop\orchestration-studio\Executable\libraries\lib.update.pdb
+C:\Users\Io.D\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.csprojResolveAssemblyReference.cache
+C:\Users\Io.D\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.dll
+C:\Users\Io.D\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.pdb
+C:\Users\admin\Desktop\orchestration-studio\Executable\libraries\lib.update.dll
+C:\Users\admin\Desktop\orchestration-studio\Executable\libraries\lib.update.pdb
+C:\Users\admin\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.dll
+C:\Users\admin\Desktop\orchestration-studio\Source Code\Libraries\lib.update\obj\Debug\lib.update.pdb
